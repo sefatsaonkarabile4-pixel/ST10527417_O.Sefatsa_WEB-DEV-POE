@@ -165,4 +165,6 @@ Onkarabile Sefatsa · Bake It Pretty Bakery · 2025
 
 5. Deployment
 - The website is deployed live using **GitHub Pages**.
-- Live URL: [INSERT YOUR GITHUB PAGES LINK HERE]
+- Live URL: [https://sefatsaonkarabile4-pixel.github.io/ST10527417_O.Sefatsa_WEB-DEV-POE/]
+- 
+  
