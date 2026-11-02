@@ -1,0 +1,157 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Bake It Pretty offers fresh, organic baked goods, croissants, and cakes delivered daily. Order online for the best bakery in town.">
+    <meta name="keywords" content="bakery, fresh bread, croissants, cakes, organic pastries">
+    <title>Bake It Pretty | Fresh Organic Bakery & Pastries</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="bakery-storefront">
+        <header class="storefront-header">
+            <div class="awning" aria-hidden="true"></div>
+            <div class="logo-wrapper">
+                <span class="bakery-icon" aria-hidden="true">🧁</span>
+                <h1>Bake It Pretty</h1>
+                <div class="tagline">✨ fresh · pink · made with love ✨</div>
+            </div>
+
+            <nav aria-label="Main navigation">
+                <ul class="nav-links">
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="enquiry.html">Enquiry</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <section class="hero">
+                <div class="hero-text">
+                    <h2>Freshly baked<br>happiness daily</h2>
+                    <p>At Bake It Pretty, every treat is crafted with organic flour, real butter, and a whole lot of pink joy.</p>
+                </div>
+                <div class="hero-image">
+                    <img src="more_realistic_less_drawn_like_vibes.jpg" alt="Bake It Pretty pink bakery storefront" class="responsive-img" loading="lazy">
+                </div>
+            </section>
+
+            <!-- Search & Sort Controls -->
+            <div class="controls-container">
+                <input type="text" id="searchInput" placeholder="Search for a treat..." onkeyup="filterAndSortTreats()">
+                
+                <select id="sortSelect" onchange="filterAndSortTreats()">
+                    <option value="default">Sort by...</option>
+                    <option value="price-low">Price: Low to High</option>
+                    <option value="price-high">Price: High to Low</option>
+                    <option value="name">Name (A-Z)</option>
+                </select>
+            </div>
+
+            <h2 class="section-title"><span>🎀</span> Our pretty treats</h2>
+
+            <!-- Added data attributes for the sorting JavaScript -->
+            <div class="treat-grid" id="treatGrid">
+                
+                <article class="treat-card" data-price="28" data-name="Butter Croissant">
+                    <span class="treat-emoji" onclick="openLightbox('https://images.unsplash.com/photo-1555507036-ab1f4038808a?q=80&w=800')">🥐</span>
+                    <h3 class="treat-name">Butter Croissant</h3>
+                    <p>Flaky, golden, and baked to perfection.</p>
+                    <div class="treat-price">R28</div>
+                    <button class="order-btn" onclick="addToCart('Butter Croissant')">Add to Order</button>
+                </article>
+
+                <article class="treat-card" data-price="32" data-name="Strawberry Cupcake">
+                    <span class="treat-emoji" onclick="openLightbox('https://images.unsplash.com/photo-1576618148400-f54bed99fcfd?q=80&w=800')">🧁</span>
+                    <h3 class="treat-name">Strawberry Cupcake</h3>
+                    <p>Vanilla sponge, pink strawberry frosting.</p>
+                    <div class="treat-price">R32</div>
+                    <button class="order-btn" onclick="addToCart('Strawberry Cupcake')">Add to Order</button>
+                </article>
+
+                <article class="treat-card" data-price="45" data-name="Berry Cheesecake">
+                    <span class="treat-emoji" onclick="openLightbox('https://images.unsplash.com/photo-1533134242443-d4fd215305ad?q=80&w=800')">🍰</span>
+                    <h3 class="treat-name">Berry Cheesecake</h3>
+                    <p>Creamy, with a swirl of raspberry.</p>
+                    <div class="treat-price">R45</div>
+                    <button class="order-btn" onclick="addToCart('Berry Cheesecake')">Add to Order</button>
+                </article>
+
+                <article class="treat-card" data-price="55" data-name="Sourdough Loaf">
+                    <span class="treat-emoji" onclick="openLightbox('https://images.unsplash.com/photo-1585478259715-876acc5be8eb?q=80&w=800')">🍞</span>
+                    <h3 class="treat-name">Sourdough Loaf</h3>
+                    <p>Organic, slow-fermented, crackly crust.</p>
+                    <div class="treat-price">R55</div>
+                    <button class="order-btn" onclick="addToCart('Sourdough Loaf')">Add to Order</button>
+                </article>
+
+                <!-- NEW TREATS ADDED BELOW -->
+                <article class="treat-card" data-price="18" data-name="Pink Macaron">
+                    <span class="treat-emoji" onclick="openLightbox('https://images.unsplash.com/photo-1569864358642-9d1684040f43?q=80&w=800')">🍓🍰🇫🇷</span>
+                    <h3 class="treat-name">Pink Macaron</h3>
+                    <p>Delicate almond shells with rose buttercream.</p>
+                    <div class="treat-price">R18</div>
+                    <button class="order-btn" onclick="addToCart('Pink Macaron')">Add to Order</button>
+                </article>
+
+                <article class="treat-card" data-price="35" data-name="Cinnamon Roll">
+                    <span class="treat-emoji" onclick="openLightbox('https://images.unsplash.com/photo-1509365465994-3da8eb119d5c?q=80&w=800')">🌀</span>
+                    <h3 class="treat-name">Cinnamon Roll</h3>
+                    <p>Warm, gooey, and topped with cream cheese icing.</p>
+                    <div class="treat-price">R35</div>
+                    <button class="order-btn" onclick="addToCart('Cinnamon Roll')">Add to Order</button>
+                </article>
+
+                <article class="treat-card" data-price="38" data-name="Chocolate Eclair">
+                    <span class="treat-emoji" onclick="openLightbox('https://images.unsplash.com/photo-1616091216791-a5360b5fc78a?q=80&w=800')">🍫</span>
+                    <h3 class="treat-name">Chocolate Éclair</h3>
+                    <p>Choux pastry filled with vanilla custard.</p>
+                    <div class="treat-price">R38</div>
+                    <button class="order-btn" onclick="addToCart('Chocolate Eclair')">Add to Order</button>
+                </article>
+
+                <article class="treat-card" data-price="40" data-name="Lemon Tart">
+                    <span class="treat-emoji" onclick="openLightbox('https://images.unsplash.com/photo-1519915028121-7d3463d20b13?q=80&w=800')">🍋</span>
+                    <h3 class="treat-name">Lemon Tart</h3>
+                    <p>Zesty lemon curd in a sweet shortcrust pastry.</p>
+                    <div class="treat-price">R40</div>
+                    <button class="order-btn" onclick="addToCart('Lemon Tart')">Add to Order</button>
+                </article>
+
+            </div>
+
+            <div id="noResults" style="display:none; text-align:center; color:#b3446c; font-weight:bold;">No treats found matching your search. 🥺</div>
+
+            <div class="divider" aria-hidden="true">🌸 🌸 🌸</div>
+
+            <section class="promise">
+                <h2>Find Us</h2>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3586.437567325966!2d28.0422!3d-26.1466!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjbCsDA4JzQ3LjgiUyAyOMKwMDInMzIuMCJF!5e0!3m2!1sen!2sza!4v1610000000000!5m2!1sen!2sza" width="100%" height="300" style="border:0; border-radius: 1rem; margin-top: 1rem;" allowfullscreen="" loading="lazy"></iframe>
+            </section>
+
+            <div id="myLightbox" class="lightbox">
+                <span class="close-lightbox" onclick="closeLightbox()">&times;</span>
+                <img id="lightboxImg" class="lightbox-img" src="nininj.jpeg" alt="Enlarged treat">
+            </div>
+        </main>
+
+        <footer>
+            <p>© 2025 Bake It Pretty · pretty pink storefront</p>
+            <ul class="footer-links">
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="enquiry.html">Enquiry</a></li>
+            </ul>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

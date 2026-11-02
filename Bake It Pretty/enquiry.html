@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Request a quote, view pricing, and check availability for Bake It Pretty bakery packages.">
+    <title>Enquiry & Pricing | Bake It Pretty</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="bakery-storefront">
+        <header class="storefront-header">
+            <div class="awning" aria-hidden="true"></div>
+            <div class="logo-wrapper">
+                <span class="bakery-icon" aria-hidden="true">🧁</span>
+                <h1>Pricing &amp; Enquiry</h1>
+                <div class="tagline">✨ transparent, simple, friendly ✨</div>
+            </div>
+
+            <nav aria-label="Main navigation">
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="enquiry.html" class="active">Enquiry</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <section>
+                <h2>Pricing Breakdown</h2>
+                <table class="price-table">
+                    <thead>
+                        <tr><th>Item</th><th>Cost</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Essential Package (weekly)</td><td>R3 550</td></tr>
+                        <tr><td>Premium Package (weekly)</td><td>R4 700</td></tr>
+                        <tr><td>Delivery Fee</td><td>R200</td></tr>
+                        <tr><td>One-time setup (if applicable)</td><td>R1 400</td></tr>
+                    </tbody>
+                </table>
+                <p>Payment: Net 15 days from invoice or pay-on-delivery.</p>
+            </section>
+
+            <section class="promise" style="text-align: left;">
+                <h2 style="text-align: center;">Request a Quote</h2>
+                <!-- Enquiry Form -->
+                <form id="enquiryForm" action="#" onsubmit="event.preventDefault(); alert('Enquiry submitted! We will contact you with a quote.'); this.reset();">
+                    <label for="bizName">Business Name:</label>
+                    <input type="text" id="bizName" required placeholder="Your Cafe or Restaurant">
+
+                    <label for="pkgType">Package Interested In:</label>
+                    <select id="pkgType">
+                        <option value="essential">Essential Package</option>
+                        <option value="premium">Premium Package</option>
+                        <option value="custom">Custom Package</option>
+                    </select>
+
+                    <label for="volunteer">Are you interested in becoming a volunteer or sponsor?</label>
+                    <select id="volunteer">
+                        <option value="no">No</option>
+                        <option value="yes">Yes</option>
+                    </select>
+
+                    <button type="submit" class="order-btn" style="width: 100%; margin-top: 1rem;">Submit Enquiry</button>
+                </form>
+            </section>
+        </main>
+
+        <footer>
+            <p>© 2025 Bake It Pretty · pretty pink storefront</p>
+            <ul class="footer-links">
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="enquiry.html">Enquiry</a></li>
+            </ul>
+        </footer>
+    </div>
+</body>
+</html>
